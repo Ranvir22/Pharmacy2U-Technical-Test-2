@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Pharmacy2UTechnicalTest.DAL.Interfaces
 {
    //Write repository will have read functionality
-   public interface IConversionLogRepository<T> : IReadRepository<T> where T : IBaseEntity
+   public interface IWriteRepository<T> : IReadRepository<T> where T : IBaseEntity
    {
       int Add(T entity);
 

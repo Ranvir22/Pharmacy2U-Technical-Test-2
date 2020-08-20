@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Pharmacy2UTechnicalTest.DAL.Classes
 {
-   //Inheritis read repository so it has read and write functionality
-   public abstract class WriteRepository<T> :ReadRepository<T>,  IConversionLogRepository<T> where T : class, IBaseEntity
+   //Inherits read repository so it has read and write functionality
+   public abstract class WriteRepository<T> :ReadRepository<T>,  IWriteRepository<T> where T : class, IBaseEntity
    {
       protected P2UTechTestDbContext _context;
 

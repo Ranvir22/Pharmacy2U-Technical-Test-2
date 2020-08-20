@@ -22,8 +22,8 @@ Id INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 ConvertFromId INT NOT NULL,
 ConvertToId INT NOT NULL,
 Rate DECIMAL(10,4) NOT NULL,
-FOREIGN KEY (ConvertFrom) REFERENCES Currencies(Id),
-FOREIGN KEY (ConvertTo) REFERENCES Currencies(Id)
+FOREIGN KEY (ConvertFromId) REFERENCES Currencies(Id),
+FOREIGN KEY (ConvertToId) REFERENCES Currencies(Id)
 )
 
 CREATE TABLE ConversionLogs
@@ -35,6 +35,6 @@ ValueFrom DECIMAL(18,2) NOT NULL,
 ValueTo DECIMAL(18,2) NOT NULL,
 ConversionDate DATETIME NOT NULL,
 UserId INT NOT NULL,
-FOREIGN KEY (ConversionID) REFERENCES ConversionRates(Id),
+FOREIGN KEY (ConversionRateID) REFERENCES ConversionRates(Id),
 FOREIGN KEY (UserId) REFERENCES Users(Id)
 )
